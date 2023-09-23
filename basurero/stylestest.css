@@ -1,0 +1,7 @@
+.miClase {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px; /* Ajusta esto a la altura que necesites */
+}
