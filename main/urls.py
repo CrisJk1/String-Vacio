@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path("", views.main, name="main"),
     path("v1/", views.v1, name="v1"),
+    path("MiAgenda/", views.MiAgenda, name="MiAgenda"),
 ]

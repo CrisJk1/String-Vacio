@@ -51,10 +51,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Agenda.urls'
 
+#En la parte de templates faltaba el dirs que hacia buscar por donde encontrar los htmls
+#Me estoy basando demasiado en el bing, asi que rezemos
+
+import os 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

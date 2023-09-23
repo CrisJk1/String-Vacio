@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("main.urls")),
     path('v1/', include("main.urls")),
+    path('MiAgenda/', include("main.urls")),
 ]
