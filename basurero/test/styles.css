@@ -1,0 +1,60 @@
+* {
+    font-family: Calibri;
+}
+body {
+    width: 900px;
+    margin: auto;
+    background-image: url("Fondo.jpg");
+    background-position: center;
+    background-size: 1450px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.pagina {
+    padding: 10px;
+    background: white;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px black;
+    border: solid black 1px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(243,243,243,0);
+}
+#tabla {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 150px;
+}
+#dia{
+    padding: 20px;
+}
+header {
+    text-align: center;
+}
+#titulo {
+    margin-top: 150px;
+}
+.agenda {
+    width: 500px;
+    float: left;
+}
+.Informacion {
+    width: 350px;
+    float: right;
+    background: rgba(105, 105, 105, 0.42);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+footer {
+    clear: both;
+    height: 10px;
+    text-align: center;
+    margin-top: 590px;
+    margin-outside: 0;
+}
