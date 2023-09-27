@@ -4,7 +4,7 @@
 body {
     width: 900px;
     margin: auto;
-    background-image: url("/../String-Vacio/static/img/Fondo1.jpg");
+    background-image: url("{% static "/img/Fondo1.jpg" %}");
     background-position: center;
     background-size: 1450px;
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
     box-shadow: 0 10px 30px black;
     border: solid black 1px;
     -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     background-color: rgba(243,243,243,0);
 }
 #tabla {
