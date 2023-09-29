@@ -4,7 +4,7 @@
 body {
     width: 900px;
     margin: auto;
-    background-image: url("{% static "/img/Fondo1.jpg" %}");
+    background-image: url("../../static/img/Fondo1.jpg");
     background-position: center;
     background-size: 1450px;
     background-repeat: no-repeat;
