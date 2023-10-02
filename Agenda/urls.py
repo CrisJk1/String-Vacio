@@ -20,6 +20,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("main.urls")),
-    path('v1/', include("main.urls")),
-    path('MiAgenda/', include("main.urls")),
+    path('login/', include("main.urls")),
+    path('login/MiAgenda/', include("main.urls")),
+    path('register/', include("main.urls")),
+    path('login/MiAgenda/config', include("main.urls")),
+    path('login/MiAgenda/info', include("main.urls")),
+    path('login/MiAgenda/config/historial', include("main.urls")),
 ]
