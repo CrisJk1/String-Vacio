@@ -2,10 +2,11 @@ from django.db import models
 
 # Create your models here.
 
-class objetivos(models.Model):
-    accion = models.CharField(max_length=30)
-    huella = models.IntegerField()
-    informacion = models.CharField(max_length=400)
+class Acciones(models.Model):
+    Accion = models.CharField(max_length=50)
+    Categoria = models.CharField(max_length=50)
+    Acumulable = models.BooleanField()
+    Huella = models.IntegerField()
 
 class Usuarios(models.Model):
     Usuario = models.CharField(max_length=20)
