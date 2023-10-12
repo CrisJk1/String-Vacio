@@ -26,4 +26,5 @@ urlpatterns = [
     path('login/MiAgenda/config', include("main.urls")),
     path('login/MiAgenda/info', include("main.urls")),
     path('login/MiAgenda/config/historial', include("main.urls")),
+    path('test/', include("main.urls")),
 ]
