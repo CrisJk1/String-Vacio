@@ -6,7 +6,7 @@ class Acciones(models.Model):
     Accion = models.CharField(max_length=50)
     Categoria = models.CharField(max_length=50)
     Acumulable = models.BooleanField()
-    Huella = models.IntegerField()
+    Huella = models.DecimalField(max_digits=5,decimal_places=2)
 
 class Usuarios(models.Model):
     Usuario = models.CharField(max_length=20)
