@@ -10,4 +10,5 @@ urlpatterns = [
     path("login/MiAgenda/config", views.config, name="config"),
     path("login/MiAgenda/info", views.info, name="info"),
     path("login/MiAgenda/config/historial", views.historial, name="historial"),
+    path("test/", views.test, name="test"),
 ]

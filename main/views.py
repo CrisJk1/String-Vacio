@@ -23,3 +23,6 @@ def info(response):
 
 def historial(response):
     return HttpResponse("<h1>Historial<h1>")
+
+def test(response):
+    return render(response, "Agenda.html")
