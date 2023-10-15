@@ -1,21 +1,26 @@
 <!doctype html>
 {% load static %}
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport">
     <title>Mi agenda</title>
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- FONT Gabarito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap" rel="stylesheet">
+    <!-- CSS and JS -->
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
 </head>
 <body>
 
     <div class="container">
-        <nav class="nav-main">
+        <div class="nav-background">
+            <nav class="nav-main">
             <img src="{% static '/img/PiesCO2.png' %}" class="nav-brand">
-            <ul>
+            <ul class="nav-menu">
                 <li>
                     <a href="#">Información</a>
                 </li>
@@ -26,11 +31,21 @@
             <ul>
                 <li>
                     <a href="#">
-                        <i></i>
+                        <img src="https://i.pravatar.cc/50" class="avatar">
                     </a>
                 </li>
             </ul>
-        </nav>
+            </nav>
+            <hr>
+        </div>
+
+        <div class="margin-agenda">
+            <div class="agenda">
+                <p id="fecha"></p>
+            </div>
+        </div>
+
     </div>
+    <script src="{% static '/js/main.js' %}"></script>
 </body>
 </html>
