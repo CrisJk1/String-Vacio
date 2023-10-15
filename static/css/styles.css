@@ -23,4 +23,15 @@ ul {
     font-size: 17px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+}
+
+.nav-brand {
+    width: 10px;
+}
+
+.nav-main ul {
+    display: flex;
 }
