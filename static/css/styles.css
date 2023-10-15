@@ -67,8 +67,8 @@ hr {
     border: none;
 }
 
-.agenda {
+.margin-agenda {
     width: 60%;
     margin: auto;
-    /*border: solid black;*/
+    border: black;
 }
