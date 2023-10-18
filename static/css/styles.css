@@ -19,6 +19,7 @@ ul {
 
 .avatar {
     border-radius: 50%;
+    box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.3);
 }
 
 .nav-background {
@@ -64,11 +65,60 @@ hr {
     color: black;
     height: 5px;
     background-color: black;
-    border: none;
 }
 
 .margin-agenda {
     width: 60%;
     margin: auto;
-    border: black;
+}
+
+.tabla {
+    text-align: center;
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+}
+
+.tabla img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 2px rgb(0, 0, 0);
+}
+
+.uno{
+    padding-left: 20px;
+}
+
+.dos {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.tres {
+    padding-right: 20px;
+}
+
+.tabla td {
+    padding-top: 20px;
+}
+
+input::placeholder {
+    text-align: center;
+}
+.fecha {
+    text-align: center;
+    margin: 20px;
+}
+
+table {
+    text-shadow: 0px 0px 10px #000000;
+    color: white;
+    -webkit-backdrop-filter: blur(105px);
+    backdrop-filter: blur(10px);
+    background-image: linear-gradient(to right, #2828dc, darkblue);
+    border: solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.3);
+    margin: auto;
 }

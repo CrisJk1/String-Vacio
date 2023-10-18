@@ -43,18 +43,32 @@
             <div class="fecha">
                 <p id="fecha"></p>
             </div>
-            <div>
+            <div class="tabla">
                 <table>
+                    <tr class="fila1">
+                        <th class="uno">Categoría</th>
+                        <th class="dos">Acción</th>
+                        <th class="tres">Valor</th>
+                    </tr>
                     <tr>
-                        <th>Categoria</th>
-                        <th>Acción</th>
-                        <th>Valor</th>
+                        <td class="uno"><img src="../static/img/class_pollito.png" height="980" width="980"/></td>
+                        <td class="dos">No comer carne</td>
+                        <td class="tres"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td class="uno"><img src="../static/img/ampolleta.svg"></td>
+                        <td class="dos">Energías autosuficientes</td>
+                        <td class="tres"><input type="checkbox"> </td>
+                    </tr>
+                    <tr>
+                        <td class="uno"><img src="../static/img/bus.svg"></td>
+                        <td class="dos">Transporte público</td>
+                        <td class="tres"><input type="text" style="width: 120px" placeholder="[km]"></td>
                     </tr>
                 </table>
             </div>
         </div>
-
     </div>
-    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static '/js/main.js' %}" class="fecha"></script>
 </body>
 </html>
