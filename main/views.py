@@ -6,11 +6,11 @@ from django.http import HttpResponse, HttpRequest
 def main(response):
     return HttpResponse("<h1>Presentación</h1>")
 
-def v1(response):
-    return HttpResponse("<h1>Login</h1>")
+def Agenda(response):
+    return render(response, "agenda.html")
 
-def MiAgenda(response):
-    return render(response, "MiAgenda.html")
+def login(response):
+    return HttpResponse("<h1>Login</h1>")
 
 def register(response):
     return HttpResponse("<h1>Register<h1>")
