@@ -5,18 +5,13 @@ from . import views
 urlpatterns = [
     path("", views.main, name="main"),
 
-    path("login/", views.login, name="login"),
-
+    path("login/", views.login_view, name="login_view"),
     path("logout/", exit, name="exit"),
-
-    path("Agenda/", views.Agenda, name="agenda"),
-
     path("register/", views.register, name="register"),
 
+    path("Agenda/", views.Agenda, name="agenda"),
     path("Agenda/config", views.config, name="config"),
-
     path("Agenda/info", views.info, name="info"),
-
     path("MiAgenda/config/historial", views.historial, name="historial"),
 
     path("test/", views.test, name="test"),

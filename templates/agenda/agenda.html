@@ -1,0 +1,26 @@
+{%extends 'agenda/base.html'%}
+
+{% block content %}
+
+<!doctype html>
+{% load static %}
+<html lang="es">
+
+{% for accion in acciones %}
+
+<div>
+
+    <h1>{{accion.Accion}}</h1>
+
+    {%if accion.Acumulable == False%}
+    <button> Realizar </button>
+    {%else%}
+    <td class=id><input type="text" style="width: 120px"></td>
+    {%endif%}
+
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

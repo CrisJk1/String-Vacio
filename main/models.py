@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -8,13 +9,17 @@ class Acciones(models.Model):
     Acumulable = models.BooleanField()
     Huella = models.DecimalField(max_digits=5,decimal_places=2)
 
-class Usuarios(models.Model):
-    Usuario = models.CharField(max_length=20)
-    Correo = models.CharField(max_length=50)
-    Contraseña = models.CharField(max_length=50)
+    def __str__(self):
+        return self.Accion + "-" + self.Categoria
 
 class RegistroCO(models.Model):
-    Usuario = models.ForeignKey(Usuarios, on_delete=models.CASCADE)
+    Usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     Fecha = models.DateTimeField(auto_now_add=True)
     Repositorio = models.CharField()
 
+    def __str__(self):
+        return self.Fecha + "-" + self.Usuario
+
+class Configuracion(models.Model):
+    Usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    Preferencias = models.CharField(default="t,")
