@@ -20,11 +20,12 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("main.urls")),
+    path('accounts/', include("django.contrib.auth.urls")),
     path('login/', include("main.urls")),
-    path('login/Agenda/', include("main.urls")),
+    path('Agenda/', include("main.urls")),
     path('register/', include("main.urls")),
-    path('login/Agenda/config', include("main.urls")),
-    path('login/Agenda/info', include("main.urls")),
-    path('login/Agenda/config/historial', include("main.urls")),
+    path('Agenda/config', include("main.urls")),
+    path('Agenda/info', include("main.urls")),
+    path('Agenda/config/historial', include("main.urls")),
     path('test/', include("main.urls")),
 ]
