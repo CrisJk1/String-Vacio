@@ -1,12 +1,14 @@
-{%extends 'agenda/base.html'%}
+<!DOCTYPE html>
+<html>
+
+{%extends 'agenda/base.html' %}
 
 {% block content %}
-
-<!doctype html>
 {% load static %}
-<html lang="es">
 
 {% for accion in acciones %}
+
+
 
 <div>
 
@@ -24,3 +26,5 @@
 {% endfor %}
 
 {% endblock %}
+
+</html>
