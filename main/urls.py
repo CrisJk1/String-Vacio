@@ -8,12 +8,11 @@ urlpatterns = [
     path("login/", views.login_view, name="login_view"),
     path("logout/", exit, name="exit"),
     path("register/", views.register, name="register"),
-
+    path("test/", views.test, name="test"),
     path("Agenda/", views.Agenda, name="agenda"),
-    path("MiAgenda/", views.MiAgenda, name="MiAgenda"),
     path("MiAgenda/config", views.config, name="config"),
-    path("MiAgenda/info", views.info, name="info"),
     path("MiAgenda/config/historial", views.historial, name="historial"),
 
-    path("test/", views.test, name="test"),
+    path("MiAgenda/", views.MiAgenda, name="MiAgenda"),
+    path("/", views.info, name="info"),
 ]
