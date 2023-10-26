@@ -10,8 +10,9 @@ urlpatterns = [
     path("register/", views.register, name="register"),
 
     path("Agenda/", views.Agenda, name="agenda"),
-    path("Agenda/config", views.config, name="config"),
-    path("Agenda/info", views.info, name="info"),
+    path("MiAgenda/", views.MiAgenda, name="MiAgenda"),
+    path("MiAgenda/config", views.config, name="config"),
+    path("MiAgenda/info", views.info, name="info"),
     path("MiAgenda/config/historial", views.historial, name="historial"),
 
     path("test/", views.test, name="test"),

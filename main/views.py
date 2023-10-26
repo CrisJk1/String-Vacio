@@ -71,10 +71,13 @@ def config(response):
     return HttpResponse("<h1>Configuracion<h1>")
 
 def info(response):
-    return HttpResponse("<h1>Información<h1>")
+    return render(response, "Information.html")
 
 def historial(response):
     return HttpResponse("<h1>Historial<h1>")
 
-def test(response):
+def MiAgenda(response):
     return render(response, "Agenda.html")
+
+def test(response):
+    return HttpResponse("<h1>test</h1>")
