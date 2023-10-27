@@ -12,11 +12,15 @@
 
 <div>
 
-    <h1>{{accion.Accion}}</h1>
+    <h1>{{accion.Accion}}</h1> 
+    <p>{{accion.Categoria}}</p>
 
     {%if accion.Acumulable == False%}
+
     <button> Realizar </button>
+
     {%else%}
+
     <td class=id><input type="text" style="width: 120px"></td>
     {%endif%}
 
