@@ -10,13 +10,13 @@ function cargar(item){
     mostrador.style.width = "60%";
     seleccion.style.width = "40%";
     seleccion.style.opacity = "1";
-    item.style.border = "2px solid red";
+    item.style.border = "2px solid green";
 
     imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
 
     modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
 
-    descripSeleccionada.innerHTML = "Descripción ";
+    descripSeleccionada.innerHTML = item.getElementsByClassName("sub_descripcion")[0].innerText;
 
     precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
 
