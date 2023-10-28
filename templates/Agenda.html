@@ -48,7 +48,7 @@
                 <p id="fecha"></p>
             </div>
             <div class="tabla">
-                <table id="miTabla">
+                <table id="tabla">
                     <tr class="fila1">
                         <th class="uno">Categoría</th>
                         <th class="dos">Acción</th>
@@ -73,7 +73,12 @@
                 </table>
             </div>
         </div>
-        <button onclick="myFunction()">Añadir fila</button>
+<!--        <button onclick="myFunction()">Añadir fila</button>-->
+        <select id="opciones" class="agregar_filas" onchange="agregarFila()">
+            <option value="opcion1">No usar vehiculo</option>
+            <option value="opcion2">Dieta mediterranea</option>
+            <option value="opcion3">Ahorro electronico [kWh/día]</option>
+        </select>
         <footer>
             <div class="container-footer-all">
 
@@ -129,7 +134,7 @@
                     </div>
 
                     <div class="information">
-                        <a href="https://github.com/CrisJk1/String-Vacio.git">Repositorio</a> | <a href="">Términos y Condiciones</a>
+                        <a href="https://github.com/CrisJk1/String-Vacio.git">Repositorio</a> | <a href="#">Términos y Condiciones</a>
                     </div>
                 </div>
 
