@@ -7,8 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
 
-from .forms import RegisterForm
-
 from .models import Acciones, RegistroCO, Configuracion
 
 
@@ -16,47 +14,6 @@ from .models import Acciones, RegistroCO, Configuracion
 
 def main(response):
     return HttpResponse("<h1>Presentación</h1>")
-
-# All related to Login
-
-def login_view(request):
-    if request.method == 'post':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('/Agenda') 
-    else:
-        form = AuthenticationForm()
-    return render(request, 'registration/login.html', {'form': form})
-
-def register(request):
-    if request.method == "post":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            return redirect('/Login')
-    else:
-        form = RegisterForm()
-    return render(request, 'registration/register.html', {'form': form})
-
-def exit(response):
-        logout(response)
-        return redirect('')
-from django.contrib import auth
-
-def check_login(request):
-    user = auth.get_user(request)
-    if user.is_authenticated:
-        print("User is logged in")
-    else:
-        login_view(request)
-
-
-#All related to Agenda
 
 @login_required
 def Agenda(response):
