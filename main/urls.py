@@ -1,13 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 #Plantilla para la pagina inicial. Deberia mostrar el index de views.py
 urlpatterns = [
     path("", views.main, name="main"),
 
-    path("login/", views.login_view, name="login_view"),
-    path("logout/", exit, name="exit"),
-    path("register/", views.register, name="register"),
+    path("", include('users.urls')),
+
     path("test/", views.test, name="test"),
     path("Agenda/", views.Agenda, name="agenda"),
     path("MiAgenda/config", views.config, name="config"),
