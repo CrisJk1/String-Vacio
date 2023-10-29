@@ -25,7 +25,11 @@ def Agenda(response):
 
 
 def config(response):
-    return HttpResponse("<h1>Configuracion<h1>")
+    config = Configuracion.objects.all()
+    acciones = Acciones.objects.all()
+    return render(response, "Config.html", {
+        'Acciones': acciones
+    })
 
 def info(response):
     return render(response, "Information.html")

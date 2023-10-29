@@ -1,0 +1,61 @@
+<nav>
+    <ul>
+        <li>
+            <a href="/MiAgenda">Agenda</a>
+        </li>
+        <li>
+            <a href="/MiAgenda/config/historial">Historial</a>
+        </li>
+    </ul>
+</nav>
+
+
+{% block content %}
+
+
+
+<h1>Transportes</h1>
+
+{% for acc in Acciones %}
+{% if "Transportes" == acc.Categoria %}
+
+<h2>{{acc.Accion}}</h2>
+<button>Seleccionar</button>
+
+{% endif %}
+{% endfor %}
+
+<h1>Alimentacion</h1>
+
+{% for acc in Acciones %}
+{% if "Alimentacion" == acc.Categoria %}
+
+<h2>{{acc.Accion}}</h2>
+<button>Seleccionar</button>
+
+{% endif %}
+{% endfor %}
+
+<h1>Electricidad</h1>
+
+{% for acc in Acciones %}
+{% if "Electricidad" == acc.Categoria %}
+
+<h2>{{acc.Accion}}</h2>
+<button>Seleccionar</button>
+
+{% endif %}
+{% endfor %}
+
+<h1>Vida Diaria</h1>
+
+{% for acc in Acciones %}
+{% if "Vida diaria" == acc.Categoria %}
+
+<h2>{{acc.Accion}}</h2>
+<button>Seleccionar</button>
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}
