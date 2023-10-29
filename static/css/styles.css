@@ -252,3 +252,9 @@ footer{
         margin-top: 40px;
     }
 }
+
+.agregar_filas{
+    position: absolute;
+    bottom: 90px;
+    right: 90px;
+}
