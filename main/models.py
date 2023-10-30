@@ -23,3 +23,6 @@ class RegistroCO(models.Model):
 class Configuracion(models.Model):
     Usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     Preferencias = models.CharField(default="t,")
+
+    def __str__(self):
+        return self.Usuario 
