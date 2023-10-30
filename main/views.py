@@ -19,8 +19,8 @@ def main(response):
 def Agenda(response):
     acciones = Acciones.objects.all()
     preferencia = Configuracion.objects.all()
-    return render(response, "agenda/agenda.html",             
-    {'acciones':acciones}
+    return render(response, "Agenda.html",             
+    {'acciones':acciones,}
     )
 
 
@@ -37,6 +37,7 @@ def info(response):
 def historial(response):
     return HttpResponse("<h1>Historial<h1>")
 
+@login_required
 def MiAgenda(response):
     return render(response, "Agenda.html")
 
