@@ -14,4 +14,5 @@ urlpatterns = [
 
     path("MiAgenda/", views.MiAgenda, name="MiAgenda"),
     path("/", views.info, name="info"),
+    path("/TyC", views.TyC, name="TyC"),
 ]

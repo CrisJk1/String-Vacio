@@ -34,6 +34,9 @@ def config(response):
 def info(response):
     return render(response, "Information.html")
 
+def TyC(response):
+    return render(response, "TyC.html")
+
 def historial(response):
     return HttpResponse("<h1>Historial<h1>")
 
