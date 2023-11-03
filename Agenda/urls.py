@@ -30,5 +30,4 @@ urlpatterns = [
 
     path('MiAgenda/', include("main.urls")),
     path('MiAgenda/info', include("main.urls")),
-    path('MiAgenda/TyC', include("main.urls")),
 ]
