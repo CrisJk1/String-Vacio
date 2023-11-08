@@ -25,4 +25,5 @@ class Configuracion(models.Model):
     Preferencias = models.CharField(default="t,")
 
     def __str__(self):
-        return self.Usuario 
+        return self.Usuario
+

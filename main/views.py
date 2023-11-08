@@ -123,3 +123,4 @@ def MiAgenda(response):
 
 def test(response):
     return HttpResponse("<h1>test</h1>")
+
