@@ -13,6 +13,12 @@
                 </li>
             </ul>
             <ul>
+                {% if user.is_authenticated %}
+                <p>{{ user.first_name }}</p>
+                {% else %}
+                <p>Login</p>
+                {% endif %}
+
                 <li>
                     <a href="#">
                         <img src="https://i.pravatar.cc/50" class="avatar">

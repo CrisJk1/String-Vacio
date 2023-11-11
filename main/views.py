@@ -25,9 +25,15 @@ def Agenda(response):
         return response
     else:
         acciones = Acciones.objects.all()
-        preferencia = Configuracion.objects.all()
+        preferencias = Configuracion.objects.all()
+        usuario = response.user
+        for persona in preferencias:
+            if persona.Usuario == usuario:
+                elecciones = persona.Preferencias
+        lista_elecciones = elecciones.strip(',')
         return render(response, "Agenda.html",             
-        {'acciones':acciones,}
+        {'acciones':acciones,
+         'prefencias':lista_elecciones}
     )
 
 
