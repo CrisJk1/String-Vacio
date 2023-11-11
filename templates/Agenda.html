@@ -37,8 +37,6 @@
                             <th class="tres">Valor</th>
                         </tr>                            
                         {%for accion in acciones%}
-                            {%id = accion.PK - 14%}
-                            {%if preferencias[id] == 'T'%}
                             <tr>
                                 {%if accion.Categoria == 'Transportes'%}
                                 <td class="uno"><img src="../static/img/iconoTransporte.png" height="980" width="980"/></td>
@@ -56,8 +54,8 @@
                                 <td class="tres"><input type="text" style="width: 120px"></td>
                                 {%else}
                                 <td class="tres"><input type="checkbox"></td>
+                                {%endif%}
                             </tr>
-                            {%endif%}
                         {%endfor%}
                     </table>
                     <input type="submit" value="Enviar">
