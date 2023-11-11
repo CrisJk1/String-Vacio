@@ -20,28 +20,10 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="nav-background">
-            <nav class="nav-main">
-            <img src="{% static '/img/PiesCO2.png' %}" class="nav-brand">
-            <ul class="nav-menu">
-                <li>
-                    <a href="{% url 'info' %}">Información</a>
-                </li>
-                <li>
-                    <a href="{% url 'config' %}">Configuración</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="https://i.pravatar.cc/50" class="avatar">
-                    </a>
-                </li>
-            </ul>
-            </nav>
-            <hr>
-        </div>
+  <div class="container">
+
+    {% include "bases\nav.html"%}
+
 
         <div class="margin-agenda">
             <div class="fecha">
