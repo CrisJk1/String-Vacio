@@ -5,8 +5,9 @@ from django.http import HttpResponse, HttpRequest, JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib import auth
+from django.contrib import messages
 from django.contrib.auth.models import User
+
 
 from .models import Acciones, RegistroCO, Configuracion
 
@@ -16,12 +17,17 @@ from .models import Acciones, RegistroCO, Configuracion
 def main(response):
     return HttpResponse("<h1>Presentación</h1>")
 
-@login_required
+
 def Agenda(response):
-    acciones = Acciones.objects.all()
-    preferencia = Configuracion.objects.all()
-    return render(response, "Agenda.html",             
-    {'acciones':acciones,}
+    if not response.user.is_authenticated:
+        messages.error(response, 'Debes iniciar sesion antes de continuar')
+        response = redirect('/login')
+        return response
+    else:
+        acciones = Acciones.objects.all()
+        preferencia = Configuracion.objects.all()
+        return render(response, "Agenda.html",             
+        {'acciones':acciones,}
     )
 
 
