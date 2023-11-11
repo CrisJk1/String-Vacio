@@ -4,7 +4,7 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import LoginForm, RegisterForm
 
 # Create your views here.
-
+#hola
 def sign_in(request):
 
     if request.method == "GET":
@@ -24,7 +24,8 @@ def sign_in(request):
             if user:
                 login(request, user)
                 return redirect ('Agenda/')
-            
+
+        messages.error(request, '¡Nombre de usuario o contraseña no válidos!')
         return render(request, 'login.html',{'form':form})
 
 def logout_view(request):
