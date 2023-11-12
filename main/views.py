@@ -112,7 +112,7 @@ def Cambiar_Verdad(request, id_accion):
         elif len(linea_valores) == ((len(acciones)*2)-1):
             linea_valores += valor
     Configuracion.objects.filter(Usuario = request.user.id).update(Preferencias = linea_valores)
-    return redirect('/MiAgenda/config')
+    return redirect('/Agenda/config')
 
 def Cambiar_Falso(request, id_accion):
     #Funcion para cambiar el valor de T a F en la base de datos
@@ -132,7 +132,7 @@ def Cambiar_Falso(request, id_accion):
         elif len(linea_valores) == ((len(acciones)*2)-1):
             linea_valores += valor
     Configuracion.objects.filter(Usuario = request.user.id).update(Preferencias = linea_valores)
-    return redirect('/MiAgenda/config')
+    return redirect('/Agenda/config')
 
 def info(response):
     return render(response, "Information.html")

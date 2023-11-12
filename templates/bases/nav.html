@@ -14,11 +14,12 @@
             </ul>
             <ul>
                 {% if user.is_authenticated %}
-                <p>{{ user.first_name }}</p>
+                <p>{{ user.username }}</p>
                 {% else %}
-                <p>Login</p>
+                <a href="{% url 'login_view' %}">Inicia sesion</a>
                 {% endif %}
-
+            </ul>
+            <ul>
                 <li>
                     <a href="#">
                         <img src="https://i.pravatar.cc/50" class="avatar">
