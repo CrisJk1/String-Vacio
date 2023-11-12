@@ -27,9 +27,10 @@
         <div class="margin-agenda">
             <div class="fecha">
                 <p id="fecha"></p>
+                <p>{{deuda}}</p> 
             </div>
             <div class="tabla">
-                <form>
+                <form method="POST" novalidate>
                     <table id="tabla">
                         <tr class="fila1">
                             <th class="uno">Categoría</th>
@@ -53,9 +54,9 @@
                                 <td class="dos">{{accion.Accion}}</td>
 
                                 {%if accion.Acumulable %}
-                                <td class="tres"><input type="text" style="width: 120px"></td>
+                                <td class="tres"><input type="text" style="width: 120px" value="{{accion.Huella}}"></td>
                                 {%else%}
-                                <td class="tres"><input type="checkbox"></td>
+                                <td class="tres"><input type="checkbox" value="{{accion.Huella}}"></td>
                                 {%endif%}
                             </tr>
 

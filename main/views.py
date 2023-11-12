@@ -23,44 +23,53 @@ def Agenda(response):
     if Configuracion.objects.filter(Usuario = response.user.id).exists() == False:
         Configuracion.objects.create(Usuario= response.user)
 
-    if not response.user.is_authenticated:
-        messages.error(response, 'Debes iniciar sesion antes de continuar')
-        response = redirect('/login')
-        return response
-    else:
-        acciones = Acciones.objects.all()
-        preferencias = Configuracion.objects.all()
-        usuario = response.user
-        for persona in preferencias:
-            if persona.Usuario == usuario:
-                elecciones = persona.Preferencias
-        lista_elecciones = elecciones.split(',')
-        del lista_elecciones[-1]
-        print(lista_elecciones)
-        acciones_preferidas = list()
-        #Obtener id de las acciones
-        id_acciones = []
-        for identificador in acciones:
-            id_acciones.append(identificador.pk)
+        if not response.user.is_authenticated:
+            messages.error(response, 'Debes iniciar sesion antes de continuar')
+            response = redirect('/login')
+            return response
+        else:
+            acciones = Acciones.objects.all()
+            preferencias = Configuracion.objects.all()
+            usuario = response.user
+            for persona in preferencias:
+                if persona.Usuario == usuario:
+                    elecciones = persona.Preferencias
+            lista_elecciones = elecciones.split(',')
+            del lista_elecciones[-1]
+            acciones_preferidas = list()
+            #Obtener id de las acciones
+            id_acciones = []
+            for identificador in acciones:
+                id_acciones.append(identificador.pk)
 
-        #Filtrar booleanos, obtener id de acciones con valor "True"
-        valores = []
-        i = 0
-        for valor in lista_elecciones:
-            if valor == "T":
-                valores.append(id_acciones[i])
-                i+=1
-            else:
-                i+=1
-        for accion in acciones:
-            if accion.pk in valores:
-                acciones_preferidas.append(accion)
-        print(acciones_preferidas)
+            #Filtrar booleanos, obtener id de acciones con valor "True"
+            valores = []
+            i = 0
+            for valor in lista_elecciones:
+                if valor == "T":
+                    valores.append(id_acciones[i])
+                    i+=1
+                else:
+                    i+=1
+            for accion in acciones:
+                if accion.pk in valores:
+                    acciones_preferidas.append(accion)
+            print(acciones_preferidas)
 
-        return render(response, "Agenda.html",             
-        {'acciones':acciones_preferidas,
-         'prefencias':lista_elecciones}
-    )
+            #Sacar datos de carbono
+            for persona in preferencias:
+                if persona.Usuario == usuario:
+                    deuda = int(persona.Deuda)
+
+            
+
+            return render(response, "Agenda.html",             
+            {'acciones':acciones_preferidas,
+            'prefencias':lista_elecciones,
+            'deuda':deuda}
+            )
+
+        
 
 
 def config(response):
