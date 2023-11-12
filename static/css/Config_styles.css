@@ -1,0 +1,38 @@
+h1, li, h2, form, div {
+    display: block;
+}
+
+body {
+    background: lightslategray;
+}
+
+.links {
+    border: 1px solid lightcyan;
+    margin: 10px;
+}
+
+.links li {
+    display: inline-block;
+    margin: 15px;
+}
+.acciones1 {
+    background: lightgreen;
+    width: 660px;
+    float: left;
+    text-align: center;
+}
+.acciones2 {
+    background: lightgreen;
+    float: right;
+    width: 660px;
+    text-align: center;
+}
+
+.acciones1 form, .acciones2 form{
+    margin: 20px;
+}
+.mensaje {
+    clear: both;
+    text-align: center;
+    border: 1px solid black;
+}

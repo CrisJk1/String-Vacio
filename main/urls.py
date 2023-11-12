@@ -11,8 +11,8 @@ urlpatterns = [
     path("test/", views.test, name="test"),
     path("Agenda/", views.Agenda, name="agenda"),
     path("Agenda/config", views.config, name="config"),
-    path("MiAgenda/config/historial", views.historial, name="historial"),
-    path("MiAgenda/", views.MiAgenda, name="MiAgenda"),
+    path("Agenda/config/historial", views.historial, name="historial"),
+    path("Agenda/", views.MiAgenda, name="MiAgenda"),
     path("/", views.info, name="info"),
 
     path("Cambiar_Verdad/<int:id_accion>/", Cambiar_Verdad, name="Cambiar_Verdad"),

@@ -1,105 +1,121 @@
-<nav>
-    <ul>
-        <li>
-            <a href="/Agenda">Agenda</a>
-        </li>
-        <li>
-            <a href="/MiAgenda/config/historial">Historial</a>
-        </li>
-    </ul>
-</nav>
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/Config_styles.css' %}">
+</head>
+<div>
+    <body>
+    <nav class="links">
+        <ul>
+            <li>
+                <a href="/Agenda">Agenda</a>
+            </li>
+            <li>
+                <a href="/Agenda/config/historial">Historial</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+    <div class="acciones1">
+        {% block content %}
+        <h1>Transportes</h1>
+        
+        {% for acc in Acciones %}
+        {% if "Transportes" == acc.Categoria %}
+        {% if acc.id in Valores %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Eliminar</button>
+        </form>
+        {% else %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Seleccionar</button>
+        </form>
+        {% endif %}
+        
+        {% endif %}
+        {% endfor %}
 
-{% block content %}
-<h1>Transportes</h1>
+        <h1>Alimentacion</h1>
+        
+        {% for acc in Acciones %}
+        {% if "Alimentacion" == acc.Categoria %}
+        
+        {% if acc.id in Valores %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Eliminar</button>
+        </form>
+        {% else %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Seleccionar</button>
+        </form>
+        {% endif %}
+        
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="acciones2">
+        <h1>Electricidad</h1>
+        
+        {% for acc in Acciones %}
+        {% if "Electricidad" == acc.Categoria %}
+        
+        {% if acc.id in Valores %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Eliminar</button>
+        </form>
+        {% else %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Seleccionar</button>
+        </form>
+        {% endif %}
+        
+        {% endif %}
+        {% endfor %}
 
-{% for acc in Acciones %}
-{% if "Transportes" == acc.Categoria %}
-
-{% if acc.id in Valores %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Eliminar</button>
-</form>
-{% else %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Seleccionar</button>
-</form>
-{% endif %}
-
-{% endif %}
-{% endfor %}
-
-
-
-
-<h1>Alimentacion</h1>
-
-{% for acc in Acciones %}
-{% if "Alimentacion" == acc.Categoria %}
-
-{% if acc.id in Valores %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Eliminar</button>
-</form>
-{% else %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Seleccionar</button>
-</form>
-{% endif %}
-
-{% endif %}
-{% endfor %}
-
-<h1>Electricidad</h1>
-
-{% for acc in Acciones %}
-{% if "Electricidad" == acc.Categoria %}
-
-{% if acc.id in Valores %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Eliminar</button>
-</form>
-{% else %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Seleccionar</button>
-</form>
-{% endif %}
-
-{% endif %}
-{% endfor %}
-
-<h1>Vida Diaria</h1>
-
-{% for acc in Acciones %}
-{% if "Vida diaria" == acc.Categoria %}
-
-{% if acc.id in Valores %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Eliminar</button>
-</form>
-{% else %}
-<h2>{{acc.Accion}}</h2>
-<form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-    {% csrf_token %}
-    <button>Seleccionar</button>
-</form>
-{% endif %}
-
-{% endif %}
-{% endfor %}
-
-{% endblock %}
+        <h1>Vida Diaria</h1>
+        
+        {% for acc in Acciones %}
+        {% if "Vida diaria" == acc.Categoria %}
+        
+        {% if acc.id in Valores %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Eliminar</button>
+        </form>
+        {% else %}
+        <h2>{{acc.Accion}}</h2>
+        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+            {% csrf_token %}
+            <button>Seleccionar</button>
+        </form>
+        {% endif %}
+        
+        {% endif %}
+        {% endfor %}
+        
+        {% endblock %}
+    </div>
+    <div class="mensaje">
+        <h2>Mensaje</h2>
+    </div>
+    </body>
+</div>
+</html>
