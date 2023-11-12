@@ -1,36 +1,32 @@
 {% load static %}
-    <div class="container">
-        
-        <div class="nav-background">
-            <nav class="nav-main">
-            <img src="{% static '/img/PiesCO2.png' %}" class="nav-brand">
-            <ul class="nav-menu">
-                <li>
-                    <a href="{% url 'info' %}">Información</a>
-                </li>
-                <li>
-                    <a href="{% url 'config' %}">Configuración</a>
-                </li>
-                <li>
-                    <a href="{% url 'agenda' %}">Agenda</a>
-                </li>
-            </ul>
-            <ul>
-                {% if user.is_authenticated %}
-                <p>{{ user.username }}</p>
-                {% else %}
-                <a href="{% url 'login_view' %}">Inicia sesion</a>
-                {% endif %}
-            </ul>
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="https://i.pravatar.cc/50" class="avatar">
-                    </a>
-                </li>
-            </ul>
-            </nav>
-            <hr>
-        </div>
-
-    </div>
+<div class="nav-background">
+    <nav class="nav-main">
+    <img src="{% static '/img/PiesCO2.png' %}" class="nav-brand">
+    <ul class="nav-menu">
+        <li>
+            <a href="{% url 'info' %}">Información</a>
+        </li>
+        <li>
+            <a href="{% url 'config' %}">Configuración</a>
+        </li>
+        <li>
+            <a href="{% url 'agenda' %}">Agenda</a>
+        </li>
+    </ul>
+    <ul>
+        {% if user.is_authenticated %}
+        <p>{{ user.username }}</p>
+        {% else %}
+        <a href="{% url 'login_view' %}">Inicia sesion</a>
+        {% endif %}
+    </ul>
+    <ul>
+        <li>
+            <a href="#">
+                <img src="https://i.pravatar.cc/50" class="avatar">
+            </a>
+        </li>
+    </ul>
+    </nav>
+    <hr>
+</div>
