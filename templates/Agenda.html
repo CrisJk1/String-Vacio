@@ -35,8 +35,10 @@
                             <th class="uno">Categoría</th>
                             <th class="dos">Acción</th>
                             <th class="tres">Valor</th>
-                        </tr>                            
-                        {%for accion in acciones%}
+                        </tr>                        
+
+                        {% for accion in acciones %}
+                        
                             <tr>
                                 {%if accion.Categoria == 'Transportes'%}
                                 <td class="uno"><img src="../static/img/iconoTransporte.png" height="980" width="980"/></td>
@@ -50,13 +52,15 @@
 
                                 <td class="dos">{{accion.Accion}}</td>
 
-                                {%if accion.Acumulable%}
+                                {%if accion.Acumulable %}
                                 <td class="tres"><input type="text" style="width: 120px"></td>
-                                {%else}
+                                {%else%}
                                 <td class="tres"><input type="checkbox"></td>
                                 {%endif%}
                             </tr>
-                        {%endfor%}
+
+                        {% endfor %}
+
                     </table>
                     <input type="submit" value="Enviar">
                 </form>

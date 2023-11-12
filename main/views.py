@@ -30,14 +30,18 @@ def Agenda(response):
         for persona in preferencias:
             if persona.Usuario == usuario:
                 elecciones = persona.Preferencias
+                print(elecciones)
         lista_elecciones = elecciones.split(',')
         del lista_elecciones[-1]
         print(lista_elecciones)
+        acciones_preferidas = list()
         for accion in acciones:
-            id = int(accion.pk)-14
-            acciones_preferidas = list()
+            print(accion)
+            id = accion.pk-14
+            
             if lista_elecciones[id] == 'T':
                 acciones_preferidas.append(accion)
+                print(acciones_preferidas)
         return render(response, "Agenda.html",             
         {'acciones':acciones_preferidas,
          'prefencias':lista_elecciones}
