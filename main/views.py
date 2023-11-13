@@ -17,7 +17,7 @@ from .models import Acciones, RegistroCO, Configuracion
 def main(response):
     return HttpResponse("<h1>Presentación</h1>")
 
-
+@login_required
 def Agenda(response):
     #Creación de fila Usuario en tabla de configuracion (Base de datos)
     if Configuracion.objects.filter(Usuario = response.user.id).exists() == False:
@@ -165,10 +165,6 @@ def info(response):
 
 def historial(response):
     return HttpResponse("<h1>Historial<h1>")
-
-@login_required
-def MiAgenda(response):
-    return render(response, "Agenda.html")
 
 def test(response):
     return HttpResponse("<h1>test</h1>")

@@ -1,6 +1,7 @@
 from django.urls import path, include
 from .views import Cambiar_Verdad, Cambiar_Falso
 from . import views
+from .views import Agenda
 
 #Plantilla para la pagina inicial. Deberia mostrar el index de views.py
 urlpatterns = [
@@ -9,11 +10,8 @@ urlpatterns = [
     path("", include('users.urls')),
 
     path("test/", views.test, name="test"),
-    path("Agenda/", views.Agenda, name="agenda"),
-    path("Agenda/config", views.config, name="config"),
-    path("Agenda/config/historial", views.historial, name="historial"),
-    path("Agenda/", views.MiAgenda, name="MiAgenda"),
-    path("/", views.info, name="info"),
+    path("Agenda/", Agenda, name="agenda"),
+    path("Agenda/info/", views.info, name="info"),
 
     path("Cambiar_Verdad/<int:id_accion>/", Cambiar_Verdad, name="Cambiar_Verdad"),
     path("Cambiar_Falso/<int:id_accion>/", Cambiar_Falso, name="Cambiar_Falso"),
