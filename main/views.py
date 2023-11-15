@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 
 
 from .models import Acciones, RegistroCO, Configuracion
@@ -54,7 +55,6 @@ def Agenda(response):
         for accion in acciones:
             if accion.pk in valores:
                 acciones_preferidas.append(accion)
-        print(acciones_preferidas)
 
         #Sacar datos de carbono
         for persona in preferencias:
@@ -159,6 +159,28 @@ def Cambiar_Falso(request, id_accion):
             linea_valores += valor
     Configuracion.objects.filter(Usuario = request.user.id).update(Preferencias = linea_valores)
     return redirect('/Agenda/config')
+
+@csrf_exempt
+def Valores(request):
+    acciones = Acciones.objects.all()
+    ajuste = Configuracion.objects.all()
+    suma = 0
+
+    if request.method == 'POST':
+        for acc in acciones:
+            if request.POST.get(acc.Accion):
+                if acc.Acumulable == True:
+                    calculo = float(request.POST.get(acc.Accion))*float(acc.Huella)
+                    suma += calculo
+                else:
+                    suma += float(request.POST.get(acc.Accion))
+    for persona in ajuste:
+        if persona.Usuario == request.user:
+            cantidad = persona.Deuda
+    ahorro = float(cantidad)-suma
+    Configuracion.objects.filter(Usuario = request.user.id).update(Deuda = ahorro)
+    
+    return redirect('/Agenda/')
 
 def info(response):
     return render(response, "Information.html")

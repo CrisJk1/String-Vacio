@@ -30,7 +30,9 @@
                 <p>{{deuda}}</p> 
             </div>
             <div class="tabla">
-                <form method="POST" novalidate>
+
+                <form action="/Valores/" method="POST">
+                    {% csrf_token %}
                     <table id="tabla">
                         <tr class="fila1">
                             <th class="uno">Categoría</th>
@@ -54,9 +56,9 @@
                                 <td class="dos">{{accion.Accion}}</td>
 
                                 {%if accion.Acumulable %}
-                                <td class="tres"><input type="text" style="width: 120px" value="{{accion.Huella}}"></td>
+                                <td class="tres"><input type="text" style="width: 120px" name="{{accion.Accion}}"></td>
                                 {%else%}
-                                <td class="tres"><input type="checkbox" value="{{accion.Huella}}"></td>
+                                <td class="tres"><input type="checkbox" name="{{accion.Accion}}" value="{{accion.Huella}}"></td>
                                 {%endif%}
                             </tr>
 

@@ -12,7 +12,9 @@ urlpatterns = [
     path("test/", views.test, name="test"),
     path("Agenda/", Agenda, name="agenda"),
     path("Agenda/info/", views.info, name="info"),
+    path("Agenda/config/", views.config, name="config"),
 
     path("Cambiar_Verdad/<int:id_accion>/", Cambiar_Verdad, name="Cambiar_Verdad"),
     path("Cambiar_Falso/<int:id_accion>/", Cambiar_Falso, name="Cambiar_Falso"),
+    path("Valores/", views.Valores, name="Valores"),
 ]

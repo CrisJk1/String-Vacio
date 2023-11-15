@@ -23,98 +23,102 @@
 <div>
     {% include "bases\nav.html"%}
 </div>
-    <div class="acciones1">
-        {% block content %}
-        <h1>Transportes</h1>
-        
-        {% for acc in Acciones %}
-        {% if "Transportes" == acc.Categoria %}
-        {% if acc.id in Valores %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Eliminar</button>
-        </form>
-        {% else %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Seleccionar</button>
-        </form>
-        {% endif %}
-        
-        {% endif %}
-        {% endfor %}
+<div class="general">
+    <div class="acciones">
+        <div class="acciones1">
+            {% block content %}
+            <h1>Transportes</h1>
+            
+            {% for acc in Acciones %}
+            {% if "Transportes" == acc.Categoria %}
+            {% if acc.id in Valores %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class = "eliminar">Eliminar</button>
+            </form>
+            {% else %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class="seleccionar">Seleccionar</button>
+            </form>
+            {% endif %}
+            
+            {% endif %}
+            {% endfor %}
 
-        <h1>Alimentacion</h1>
-        
-        {% for acc in Acciones %}
-        {% if "Alimentacion" == acc.Categoria %}
-        
-        {% if acc.id in Valores %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Eliminar</button>
-        </form>
-        {% else %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Seleccionar</button>
-        </form>
-        {% endif %}
-        
-        {% endif %}
-        {% endfor %}
-    </div>
-    <div class="acciones2">
-        <h1>Electricidad</h1>
-        
-        {% for acc in Acciones %}
-        {% if "Electricidad" == acc.Categoria %}
-        
-        {% if acc.id in Valores %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Eliminar</button>
-        </form>
-        {% else %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Seleccionar</button>
-        </form>
-        {% endif %}
-        
-        {% endif %}
-        {% endfor %}
+            <h1>Alimentacion</h1>
+            
+            {% for acc in Acciones %}
+            {% if "Alimentacion" == acc.Categoria %}
+            
+            {% if acc.id in Valores %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class = "eliminar">Eliminar</button>
+            </form>
+            {% else %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class="seleccionar">Seleccionar</button>
+            </form>
+            {% endif %}
+            
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="acciones2">
+            <h1>Electricidad</h1>
+            
+            {% for acc in Acciones %}
+            {% if "Electricidad" == acc.Categoria %}
+            
+            {% if acc.id in Valores %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class = "eliminar">Eliminar</button>
+            </form>
+            {% else %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class="seleccionar">Seleccionar</button>
+            </form>
+            {% endif %}
+            
+            {% endif %}
+            {% endfor %}
 
-        <h1>Vida Diaria</h1>
-        
-        {% for acc in Acciones %}
-        {% if "Vida diaria" == acc.Categoria %}
-        
-        {% if acc.id in Valores %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Eliminar</button>
-        </form>
-        {% else %}
-        <h2>{{acc.Accion}}</h2>
-        <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-            {% csrf_token %}
-            <button>Seleccionar</button>
-        </form>
-        {% endif %}
-        
-        {% endif %}
-        {% endfor %}
-        
-        {% endblock %}
+            <h1>Vida Diaria</h1>
+            
+            {% for acc in Acciones %}
+            {% if "Vida diaria" == acc.Categoria %}
+            
+            {% if acc.id in Valores %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class = "eliminar">Eliminar</button>
+            </form>
+            {% else %}
+            <h2>{{acc.Accion}}</h2>
+            <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+                {% csrf_token %}
+                <button class="seleccionar">Seleccionar</button>
+            </form>
+            {% endif %}
+            
+            {% endif %}
+            {% endfor %}
+            
+            {% endblock %}
+        </div>
     </div>
+</div>
     <div class="mensaje">
         <h2>Mensaje</h2>
     </div>

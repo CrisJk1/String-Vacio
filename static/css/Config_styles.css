@@ -6,6 +6,16 @@ body {
     background: lightslategray;
 }
 
+.seleccionar {
+    color: black;
+    background-color: gray;
+}
+
+.eliminar {
+    color: black;
+    background-color: tomato;
+}
+
 .links {
     border: 1px solid lightcyan;
     margin: 10px;
@@ -15,24 +25,36 @@ body {
     display: inline-block;
     margin: 15px;
 }
-.acciones1 {
-    background: lightgreen;
-    width: 660px;
-    float: left;
-    text-align: center;
-}
-.acciones2 {
-    background: lightgreen;
-    float: right;
-    width: 660px;
-    text-align: center;
-}
 
 .acciones1 form, .acciones2 form{
     margin: 20px;
 }
+
 .mensaje {
     clear: both;
     text-align: center;
     border: 1px solid black;
+}
+
+.acciones {
+    display: flex;
+  }
+  
+.acciones div {
+    flex: 1;
+    padding: 10px;
+}
+
+.acciones .acciones1 {
+    background-color: lightgreen;
+    text-align: center;
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 15px;
+}
+
+.acciones .acciones2 {
+    background-color: lightgreen;
+    text-align: center;
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 15px;
 }
