@@ -318,3 +318,13 @@ footer{
     bottom: 90px;
     right: 90px;
 }
+
+.MiBarra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MiBarra progress{
+    width: 50%;
+    height: 50px;
+}

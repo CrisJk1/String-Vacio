@@ -27,10 +27,12 @@
         <div class="margin-agenda">
             <div class="fecha">
                 <p id="fecha"></p>
-                <p>{{deuda}}</p> 
+                <p id="numero">{{deuda}}</p>
+            </div>
+            <div class="MiBarra">
+                <progress min="0" max="4400" id="barra"></progress>
             </div>
             <div class="tabla">
-
                 <form action="/Valores/" method="POST">
                     {% csrf_token %}
                     <table id="tabla">
@@ -120,7 +122,7 @@
         <div class="container-footer">
                <div class="footer">
                     <div class="copyright">
-                        © 2023 Todos los Derechos Reservados | <a href="">String Vacío</a>
+                        © 2023 Todos los Derechos Reservados | <a href="#">String Vacío</a>
                     </div>
 
                     <div class="information">
