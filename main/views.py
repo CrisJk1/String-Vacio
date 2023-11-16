@@ -16,7 +16,7 @@ from .models import Acciones, RegistroCO, Configuracion
 # Create your views here.
 
 def main(response):
-    return HttpResponse("<h1>Presentación</h1>")
+    return render(response, "Presentacion.html")
 
 @login_required
 def Agenda(response):
