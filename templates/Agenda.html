@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Pixelify+Sans&display=swap" rel="stylesheet">
     <!-- FONT Gabarito -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap" rel="stylesheet">
+    <!-- Varela Round -->
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Pixelify+Sans&family=Varela+Round&display=swap" rel="stylesheet">
     <!-- CSS and JS -->
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
 </head>
@@ -27,10 +27,14 @@
         <div class="margin-agenda">
             <div class="fecha">
                 <p id="fecha"></p>
-                <p id="numero">{{deuda}}</p>
             </div>
-            <div class="MiBarra">
-                <progress min="0" max="4400" id="barra"></progress>
+            <div class="deuda-barra">
+                <p>Tu deuda de carbono es:</p>
+                <p id="numero">{{deuda}}</p>
+                <p>[Kg/CO2]</p>
+                <div class="MiBarra">
+                    <progress min="0" max="4400" id="barra"></progress>
+                </div>
             </div>
             <div class="tabla">
                 <form action="/Valores/" method="POST">

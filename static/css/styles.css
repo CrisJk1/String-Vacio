@@ -170,8 +170,10 @@ input::placeholder {
 .fecha {
     text-align: center;
     margin: 20px;
-    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    margin-top: 30px;
+    font-family: 'Varela Round', sans-serif;
     font-size: 35px;
+    font-weight: bold;
 }
 
 table {
@@ -327,4 +329,12 @@ footer{
 .MiBarra progress{
     width: 50%;
     height: 50px;
+}
+.deuda-barra p{
+    text-align: center;
+    font-size: large;
+}
+#numero{
+    font-weight: bold;
+    font-size: 100px;
 }
