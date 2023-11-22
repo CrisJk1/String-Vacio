@@ -8,6 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
+from datetime import date, timedelta
 
 
 from .models import Acciones, RegistroCO, Configuracion
@@ -179,6 +180,14 @@ def Valores(request):
             cantidad = persona.Deuda
     ahorro = float(cantidad)-suma
     Configuracion.objects.filter(Usuario = request.user.id).update(Deuda = ahorro)
+    if RegistroCO.objects.filter(Usuario = request.user.id, Fecha = date.today()).exists() == False:
+        RegistroCO.objects.create(Usuario= request.user, Fecha = date.today(), Repositorio = suma)
+    else:
+        visitante = RegistroCO.objects.get(Usuario= request.user, Fecha = date.today())
+        valor_definitivo = float(visitante.Repositorio)
+        valor_definitivo += suma
+        RegistroCO.objects.filter(Usuario= request.user, Fecha = date.today()).update(Repositorio = valor_definitivo)
+
     
     return redirect('/Agenda/')
 
@@ -186,7 +195,17 @@ def info(response):
     return render(response, "Information.html")
 
 def historial(response):
-    return HttpResponse("<h1>Historial<h1>")
+    registro = RegistroCO.objects.all()
+    idi = response.user
+    existencia = RegistroCO.objects.filter(Usuario = response.user.id, Fecha = date.today()).exists()
+    print(existencia)
+
+
+    return render(response, "Historial.html", {
+        'registro': registro,
+        'usuario': idi,
+        'existencia': str(existencia),
+    })
 
 def test(response):
     return HttpResponse("<h1>test</h1>")

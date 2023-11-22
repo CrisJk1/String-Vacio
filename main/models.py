@@ -14,7 +14,7 @@ class Acciones(models.Model):
 
 class RegistroCO(models.Model):
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE)
-    Fecha = models.DateTimeField(auto_now_add=True)
+    Fecha = models.DateField(auto_now_add=True)
     Repositorio = models.DecimalField(max_digits=6,decimal_places=2,default = 0)
 
     def __str__(self):

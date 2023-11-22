@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Historial</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!--FONT PIXELIFY-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <!-- FONT Gabarito -->
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap" rel="stylesheet">
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/Config_styles.css' %}">
+</head>
+<div>
+    {% include "bases\nav.html"%}
+</div>
+
+<div>
+    <body>
+        {% block content %}
+        {% if existencia == "False" %}
+            <h1>Aun no tiene registro de Carbono ahorrado =[</h1>
+        {% else %}
+            {% for ahorrado in registro %}
+            {% if ahorrado.Usuario == usuario %}
+                <h1>{{ ahorrado.Fecha }}</h1>
+                <h2>{{ ahorrado.Repositorio }} CO2</h2>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% endblock %}
+    </body>
+</div>
+
+</html>
