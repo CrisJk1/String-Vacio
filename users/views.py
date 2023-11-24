@@ -9,7 +9,7 @@ def sign_in(request):
 
     if request.method == "GET":
         if request.user.is_authenticated:
-            return redirect ('Agenda/')
+            return redirect ('/Agenda')
         
         form = LoginForm()
         return render(request, "login.html", {'form':form})

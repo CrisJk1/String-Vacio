@@ -1,4 +1,5 @@
 {% load static %}
+
 <div class="nav-background">
     <nav class="nav-main">
     <img src="{% static '/img/PiesCO2.png' %}" class="nav-brand">
@@ -12,6 +13,14 @@
         <li>
             <a href="/Agenda">Agenda</a>
         </li>
+        {%if user.is_authenticated%}
+        <li>
+            <a href="{% url 'historial' %}">Historial</a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}">Cerrar Sesion</a>
+        </li>
+        {%endif%}
     </ul>
     <ul>
         {% if user.is_authenticated %}
