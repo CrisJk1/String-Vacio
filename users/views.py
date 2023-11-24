@@ -23,14 +23,14 @@ def sign_in(request):
             user = authenticate(request, username=username,password=password)
             if user:
                 login(request, user)
-                return redirect ('Agenda/')
+                return redirect ('/Agenda')
 
         messages.error(request, '¡Nombre de usuario o contraseña no válidos!')
         return render(request, 'login.html',{'form':form})
 
 def logout_view(request):
     logout(request)
-    messages.success(request,'you been logged out')
+    messages.success(request,'Se ha cerrado sesion correctamente')
     return redirect('/login')
 
 def register_view(request):

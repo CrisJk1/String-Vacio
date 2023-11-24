@@ -25,11 +25,7 @@ def Agenda(response):
     if Configuracion.objects.filter(Usuario = response.user.id).exists() == False:
         Configuracion.objects.create(Usuario= response.user)
 
-    if not response.user.is_authenticated:
-        messages.error(response, 'Debes iniciar sesion antes de continuar')
-        response = redirect('/login')
-        return response
-    else:
+    if response.user.is_authenticated:
         acciones = Acciones.objects.all()
         preferencias = Configuracion.objects.all()
         usuario = response.user
@@ -69,8 +65,11 @@ def Agenda(response):
         'prefencias':lista_elecciones,
         'deuda':deuda}
         )
+    else:
+        messages.error(response, 'Debes iniciar sesion antes de continuar')
+        return redirect('/login')
 
-
+@login_required
 def config(response):
     usuario = response.user
     config = Configuracion.objects.all()
@@ -202,6 +201,7 @@ def Valores(request):
 def info(response):
     return render(response, "Information.html")
 
+@login_required
 def historial(response):
     registro = RegistroCO.objects.all()
     idi = response.user

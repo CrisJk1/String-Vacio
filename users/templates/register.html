@@ -40,17 +40,21 @@
 				<br>
 				<label for="username">Nombre de usuario</label><br>
 				<input type="text" id="username" name="username"><br><br>
+				{{ form.username.errors }}
 
 				<label for="email">Correo electronico</label><br>
 				<input type="email" id="email" name="email"><br><br>
+				{{ form.email.errors }}
 
 				<label for="password1">Contraseña</label><br>
 				<input type="password1" id="password1" name="password1"><br><br>
 
 				<label for="password2">Repite la contraseña</label><br>
 				<input type="password2" id="password2" name="password2"><br><br>
+				{{ form.password.errors }}
 
 				<input type="submit" value="Registrate">
+				{{ form.non_field_errors }}
 
 			</form>
 
@@ -62,12 +66,6 @@
 				</ul>
 			{% endif %}
 		</div>
-	<form method="POST" novalidate>
-		{% csrf_token %}
-		<h2>Sign Up</h2>
-		{{ form.as_p }}		
-		<input type="submit" value="register" />
-	</form>
 
 </body>
 
