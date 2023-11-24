@@ -24,29 +24,40 @@
 <div class="general">
     <div class="acciones">
         <div class="acciones1">
+        <div class="borde1">
             {% block content %}
-            <h1>Transportes</h1>
-            
+            <div class="subtitulos">
+                <img src="../../static/img/iconoTransporte.png" class="imagenes">
+                <h1 class="deber">Transportes</h1>
+            </div>
+
             {% for acc in Acciones %}
             {% if "Transportes" == acc.Categoria %}
             {% if acc.id in Valores %}
-            <h2>{{acc.Accion}}</h2>
-            <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
-                {% csrf_token %}
-                <button class = "eliminar">Eliminar</button>
-            </form>
+            <div class="accion">
+                <h2>{{acc.Accion}}</h2>
+                <form action="{% url 'Cambiar_Falso' acc.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class = "eliminar">Eliminar</button>
+                </form>
+            </div>
             {% else %}
-            <h2>{{acc.Accion}}</h2>
-            <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
-                {% csrf_token %}
-                <button class="seleccionar">Seleccionar</button>
-            </form>
+            <div class="accion">
+                <h2>{{acc.Accion}}</h2>
+                <form action="{% url 'Cambiar_Verdad' acc.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="seleccionar">Seleccionar</button>
+                </form>
+            </div>
             {% endif %}
             
             {% endif %}
             {% endfor %}
 
-            <h1>Alimentacion</h1>
+            <div class="subtitulos">
+                <img src="../../static/img/iconoAlimento.png" class="imagenes">
+                <h1 class="deber">Alimentacion</h1>
+            </div>
             
             {% for acc in Acciones %}
             {% if "Alimentacion" == acc.Categoria %}
@@ -68,8 +79,14 @@
             {% endif %}
             {% endfor %}
         </div>
+        </div>
         <div class="acciones2">
-            <h1>Electricidad</h1>
+        <div class="borde2">
+
+            <div class="subtitulos">
+                <img src="../../static/img/iconoElectricidad.png" class="imagenes">
+                <h1 class="deber">Electricidad</h1>
+            </div>
             
             {% for acc in Acciones %}
             {% if "Electricidad" == acc.Categoria %}
@@ -91,7 +108,10 @@
             {% endif %}
             {% endfor %}
 
-            <h1>Vida Diaria</h1>
+            <div class="subtitulos">
+                <img src="../../static/img/iconoVidaDiaria.png" class="imagenes">
+                <h1 class="deber">Vida Diaria</h1>
+            </div>
             
             {% for acc in Acciones %}
             {% if "Vida diaria" == acc.Categoria %}
@@ -115,10 +135,11 @@
             
             {% endblock %}
         </div>
+        </div>
     </div>
 </div>
     <div class="mensaje">
-        <h2>Mensaje</h2>
+        <h2>STRCO₂</h2>
     </div>
     </body>
 </div>

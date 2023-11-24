@@ -16,26 +16,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap" rel="stylesheet">
     <!-- CSS and JS -->
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/Config_styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Config_styles.css' %}">
 </head>
 <div>
     {% include "bases\nav.html"%}
 </div>
 
-<div>
-    <body>
+<div class="seccion">
+    <body class="historial">
+        <h1 class="hist">REGISTRO DE CO2 AHORRADO</h1>
         {% block content %}
         {% if existencia == "False" %}
-            <h1>Aun no tiene registro de Carbono ahorrado =[</h1>
+            <h1 class="negacion">Aun no hay registro de Carbono ahorrado =[</h1>
         {% else %}
-            {% for ahorrado in registro %}
-            {% if ahorrado.Usuario == usuario %}
-                <h1>{{ ahorrado.Fecha }}</h1>
-                <h2>{{ ahorrado.Repositorio }} CO2</h2>
-            {% endif %}
-            {% endfor %}
+            <div>
+                {% for pasado in orden %}
+                    <div class="cuadros">
+                        <div class="bloque">
+                        <h1 class="año">{{ pasado }}</h1>
+                        {% for ahorrado in registro %}
+                            {% if ahorrado.Usuario  == usuario %}
+                                {% if ahorrado.Fecha.year == pasado %}
+                                    <div class="argumento">
+                                        <div class="fecha">
+                                            {% load i18n %}
+                                            {% get_current_language as LANGUAGE_CODE %}
+                                            {% language 'es' %}
+                                            <h2>{{ahorrado.Fecha|date:"F"|upper}}</h2>
+                                            <h2>{{ahorrado.Fecha.day}}</h2>
+                                            {% language LANGUAGE_CODE %}
+                                            {% endlanguage %}
+                                            {% endlanguage %}
+                                        </div>
+                                        <h2 class="ahorros">{{ahorrado.Repositorio}} CO2</h2>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         {% endif %}
-
+        <div class="mensaje">
+            <h2>STRCO₂</h2>
+        </div>
         {% endblock %}
     </body>
 </div>

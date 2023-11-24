@@ -3,37 +3,48 @@ h1, li, h2, form, div {
 }
 
 body {
-    background: lightslategray;
+    background-image: url("../../static/img/fondoAgenda.png");
+    background-size: cover;
+}
+
+.deber {
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+   }
+
+.acciones {
+    text-align: center;
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 12px;
+}
+
+.imagenes {
+    width: 20%;
+}
+
+.subtitulos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .seleccionar {
     color: black;
-    background-color: gray;
+    background-color: lightgray;
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    padding: 5px 10px;
 }
 
 .eliminar {
     color: black;
-    background-color: tomato;
-}
-
-.links {
-    border: 1px solid lightcyan;
-    margin: 10px;
-}
-
-.links li {
-    display: inline-block;
-    margin: 15px;
+    background-color: lightgreen;
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    padding: 5px 10px;
 }
 
 .acciones1 form, .acciones2 form{
     margin: 20px;
-}
-
-.mensaje {
-    clear: both;
-    text-align: center;
-    border: 1px solid black;
 }
 
 .acciones {
@@ -45,16 +56,80 @@ body {
     padding: 10px;
 }
 
-.acciones .acciones1 {
-    background-color: lightgreen;
+.acciones .borde1 {
+    background-color: rgba(148, 188, 156,0.7);
+    border-radius: 20px;
+}
+
+.acciones .borde2 {
+    background-color: rgba(148, 188, 156,0.7);
+    border-radius: 20px;
+}
+
+
+
+
+.cuadros {
+    border-radius: 20px;
+    width: 46%;
+    float: left;
+    margin: 20px;
+    align-items: center;
+    background-color: rgb(148, 188, 156,0.8);
+    padding-left: 2%;
+}
+
+.hist {
+    text-align: center;
+    margin: 5%;
+}
+
+.negacion {
+    display: block;
+    text-align: center;
+    padding: 10%;
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 200%;
+}
+
+.seccion, .bloques {
+    display: block;
+}
+
+.argumento {
+    border-radius: 20px;
+    float: left;
+    border: 1px solid black;
+    margin: 2%;
+    width: 20%;
+}
+
+.historial {
+    background-image: url("../../static/img/fondoLogin.png");
+    background-size: cover;
+    background-position-x: center;
+}
+.ahorros {
+    display: block;
     text-align: center;
     font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
     font-size: 15px;
 }
 
-.acciones .acciones2 {
-    background-color: lightgreen;
+.fecha {
+    display: block;
     text-align: center;
     font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-    font-size: 15px;
+    font-size: 10px;
+}
+
+.año {
+    display: block;
+    text-align: center;
+}
+
+.mensaje {
+    clear: both;
+    text-align: center;
+    padding: 20px;
 }
