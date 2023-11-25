@@ -37,13 +37,15 @@
                         {% for ahorrado in registro %}
                             {% if ahorrado.Usuario  == usuario %}
                                 {% if ahorrado.Fecha.year == pasado %}
-                                    <div class="argumento">
-                                        <div class="fecha">
+                                    <div class="mento">
+                                        <div class="ahfe">
                                             {% load i18n %}
                                             {% get_current_language as LANGUAGE_CODE %}
                                             {% language 'es' %}
-                                            <h2>{{ahorrado.Fecha|date:"F"|upper}}</h2>
-                                            <h2>{{ahorrado.Fecha.day}}</h2>
+
+                                            <h2 class>{{ ahorrado.Fecha|date:"F"|upper }}</h2>
+                                            <h2 class>{{ ahorrado.Fecha.day }}</h2>
+                                            
                                             {% language LANGUAGE_CODE %}
                                             {% endlanguage %}
                                             {% endlanguage %}
