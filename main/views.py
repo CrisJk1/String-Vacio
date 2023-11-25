@@ -57,14 +57,18 @@ def Agenda(response):
         for persona in preferencias:
             if persona.Usuario == usuario:
                 deuda = int(persona.Deuda)
-
-            
+        
+        #Boss Fight
+        boton_activador = False
+        if deuda == 0:
+            boton_activador = True
 
         return render(response, "Agenda.html",             
         {'acciones':acciones_preferidas,
         'prefencias':lista_elecciones,
-        'deuda':deuda}
-        )
+        'deuda':deuda,
+        'activador': boton_activador,
+        })
     else:
         messages.error(response, 'Debes iniciar sesion antes de continuar')
         return redirect('/login')
@@ -223,5 +227,7 @@ def test(response):
     return HttpResponse("<h1>test</h1>")
 
 def Taylor(response):
-        return render(response, "Taylor.html")
+    Configuracion.objects.filter(Usuario = response.user.id).update(Deuda = 4400.00)
+    print("aaaaa")
+    return render(response, "Taylor.html")
 

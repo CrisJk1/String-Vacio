@@ -19,5 +19,5 @@ urlpatterns = [
     path("Cambiar_Falso/<int:id_accion>/", Cambiar_Falso, name="Cambiar_Falso"),
     path("Valores/", views.Valores, name="Valores"),
 
-    path("taylor/", views.Taylor, name="Taylor")
+    path("taylor/", views.Taylor, name="Taylor"),
 ]

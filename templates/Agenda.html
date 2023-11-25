@@ -35,6 +35,12 @@
                 <div class="MiBarra">
                     <progress min="0" max="4400" id="barra"></progress>
                 </div>
+                {% if activador == True %}
+                    <form action="/taylor/" method="POST">
+                        {% csrf_token %}
+                        <button class="reinicio">Reiniciar...</button>
+                    </form>
+                {% endif %}
             </div>
             <div class="tabla">
                 <form action="/Valores/" method="POST">
