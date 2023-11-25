@@ -152,12 +152,13 @@ hr {
 }
 
 .boton {
+    font-family: 'Gabarito', sans-serif;
     position: fixed;
     padding: 15px 25px;
     font-size: 24px;
     text-align: center;
-    color: #fff;
-    background-color: #f44336;
+    color: #000000;
+    background-color: #6af56a;
     border-radius: 10px;
     bottom: 50px;
     right: 50px;

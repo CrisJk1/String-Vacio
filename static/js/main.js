@@ -8,3 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
 //Barra
 var numero = document.getElementById("numero").innerText;
 document.getElementById("barra").value = numero;
+
+// Selecciona la etiqueta <p> por su ID
+let pTag = document.getElementById('numero');
+
+// Verifica si el contenido de la etiqueta <p> es igual a '0'
+if(pTag.textContent == '0') {
+    // Redirige a otro enlace
+    window.location.href = "https://www.otroenlace.com";
+}
