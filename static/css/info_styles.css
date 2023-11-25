@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans';
 }
 body{
     background-image: url("../../static/img/fondoAgenda.png");
@@ -24,12 +22,10 @@ body{
     justify-content: space-between;
     margin-bottom: 40px;
 }
-
 .mostrador .fila .item{
     max-width: 210px;
     padding: 30px;
     height: 250px;
-    /*border: 2px solid red;*/
     text-align: center;
     margin: 0 10px;
     cursor: pointer;
@@ -119,7 +115,4 @@ body{
 .sub_descripcion{
     display: none;
     visibility: hidden;
-}
-.item{
-    /*background: white;*/
 }

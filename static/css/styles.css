@@ -25,8 +25,11 @@ ul {
 
 .nav-background {
     width: 100%;
-    margin: auto;
-    background-color: #ffffff;
+    padding-left: 50px;
+    padding-right: 50px;
+    -webkit-backdrop-filter: blur(105px);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
     position: sticky;
     top: 0;
     color: black;
@@ -149,18 +152,15 @@ hr {
 }
 
 .boton {
-    display: inline-block;
+    position: fixed;
     padding: 15px 25px;
     font-size: 24px;
-    cursor: pointer;
     text-align: center;
-    text-decoration: none;
-    outline: none;
     color: #fff;
     background-color: #f44336;
-    border: none;
     border-radius: 10px;
-    box-shadow: 0 9px #999;
+    bottom: 50px;
+    right: 50px;
   }
   
   .boton:hover {background-color: #ff5722}
