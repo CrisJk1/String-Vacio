@@ -8,6 +8,3 @@ document.addEventListener("DOMContentLoaded", function() {
 //Barra
 var numero = document.getElementById("numero").innerText;
 document.getElementById("barra").value = numero;
-
-// Selecciona la etiqueta <p> por su ID
-let pTag = document.getElementById('numero');
