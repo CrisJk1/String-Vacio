@@ -222,3 +222,6 @@ def historial(response):
 def test(response):
     return HttpResponse("<h1>test</h1>")
 
+def Taylor(response):
+        return render(response, "Taylor.html")
+
