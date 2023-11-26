@@ -45,7 +45,7 @@ def register_view(request):
             user.username = user.username.lower()
             user.save()
             login(request, user)
-            return redirect('/Agenda')
+            return redirect('/Agenda/config')
         else:
             messages.error(request, '¡Nombre de usuario o contraseña no válidos!')
             return render(request,'register.html',{'form':form})

@@ -8,15 +8,15 @@
     <img src="{% static '/img/PiesCO2.png' %}" class="nav-brand">
     <ul class="nav-menu">
         <li>
+            <a href="/Agenda">Agenda</a>
+        </li>
+        {%if user.is_authenticated%}
+        <li>
             <a href="/Agenda/info">Información</a>
         </li>
         <li>
             <a href="/Agenda/config">Configuración</a>
         </li>
-        <li>
-            <a href="/Agenda">Agenda</a>
-        </li>
-        {%if user.is_authenticated%}
         <li>
             <a href="{% url 'historial' %}">Historial</a>
         </li>
